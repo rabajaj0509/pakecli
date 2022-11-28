@@ -19,7 +19,7 @@ Options:
 $ virtualenv env
 
 # Activate virtual envirement
-$ soure env/bin/activate
+$ source env/bin/activate
 
 # Install pakecli command line tool
 $ pip install --editable .
