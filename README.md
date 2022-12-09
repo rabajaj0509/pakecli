@@ -41,5 +41,5 @@ $ pakecli --method jpake --role client --prime 64 --secret hello
 
 ## One command to compute time for the protocol (combined server and client time)
 ```
-pakecli --method speke --role server --prime 32 --secret hellol & pakecli --method speke --role client --prime 32 --secret hellol
+pakecli --method speke --role server --prime 32 --secret hellol & pakecli --method speke --role client --prime 32 --secret hello
 ```
