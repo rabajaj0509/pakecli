@@ -34,12 +34,12 @@ class spekeServer:
         a = random.randint(0, self.p-1)
         server_to_send = pow(self.g, a, self.p)
         c.send(str(server_to_send).encode())
-        print("    => Sent to client...")
+        # print("    => Sent to client...")
         time.sleep(1)
 
         b = int(c.recv(1024).decode())
-        print("    => Received from client...")
+        # print("    => Received from client...")
         time.sleep(1)
 
         serverK = pow(b, a, self.p)
-        print("[✓] Shared key: {}".format(serverK))
+        # print("[✓] Shared key: {}".format(serverK))

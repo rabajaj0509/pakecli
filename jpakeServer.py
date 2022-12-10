@@ -17,14 +17,14 @@ class jpakeServer:
         # generates two random values (this are kept secret)
         x1 = random.randint(0, self.p-1)
         x2 = random.randint(0, self.p-1)
-        print("[-] Server has generated random values...")
-        time.sleep(1)
+        # print("[-] Server has generated random values...")
+        time.sleep(2)
         # generates Non-Interactive Zero Knowledge
         g_x1 = pow(self.g,x1,self.p)
         g_x2 = pow(self.g,x2,self.p)
-        print("[-] Non-Interactive Zero Knowledge (NI-ZKP) Proof")
-        print("    => Generated...")
-        time.sleep(1)
+        # print("[-] Non-Interactive Zero Knowledge (NI-ZKP) Proof")
+        # print("    => Generated...")
+        time.sleep(2)
         return (x2, g_x1, g_x2)
 
     def generate_A(self, g_x1, g_x3, g_x4, x2):
@@ -39,8 +39,8 @@ class jpakeServer:
 
     def generate_key(self, B, K_inv1, x2):
         # generates high entropy shared key
-        print("[-] High entropy shared key for server")
-        print("    => Generated...")
+        # print("[-] High entropy shared key for server")
+        # print("    => Generated...")
         time.sleep(2)
         server_key = pow(B*K_inv1,x2,self.p)
         return server_key
@@ -70,16 +70,16 @@ class jpakeServer:
 
         # send and receive shared key
         c.send(str(server_key).encode())
-        print("    => Sent to client...")
+        # print("    => Sent to client...")
         time.sleep(2)
         client_key = int(c.recv(1024).decode())
-        print("    => Received from client...")
+        # print("    => Received from client...")
         time.sleep(2)
 
         # validate shared key
         if server_key == client_key:
-            print("[✓] Shared key verified on server side !!!")
-            print("=> {}".format(server_key))
+            # print("[✓] Shared key verified on server side !!!")
+            # print("=> {}".format(server_key))
             time.sleep(2)
 
         c.close()
